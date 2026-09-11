@@ -1,4 +1,4 @@
-package com.src.model ;
+package src.model ;
 
 class Hotel
 {

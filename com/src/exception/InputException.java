@@ -1,4 +1,4 @@
-package com.src.exception ;
+package src.exception ;
 
 public class InputException extends Exception
 {

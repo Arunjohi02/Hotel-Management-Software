@@ -1,4 +1,4 @@
-package com.src.service ;
+package src.service ;
 
 public class UserService
 {

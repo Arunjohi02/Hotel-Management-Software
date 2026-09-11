@@ -1,4 +1,4 @@
-package com.src.enums;
+package src.enums;
 
 public enum Role
 {

@@ -1,19 +1,19 @@
-package com.src ;
+package com ;
 
 import java.util.Scanner ;
 import java.util.InputMismatchException ;
 
 import java.time.LocalDate ;
-import java.time.format.*;
+import java.time.format.DateTimeParseException ;
 
-import com.src.model.User ;
+import src.model.User ;
 
-import com.src.service.UserService ;
+import src.service.UserService ;
 
-import com.src.exception.InvalidDate ;
-import com.src.exception.InputException ;
+import src.exception.InvalidDate ;
+import src.exception.InputException ;
 
-import com.src.enums.Role ;
+import src.enums.Role ;
 
 class Main
 {
