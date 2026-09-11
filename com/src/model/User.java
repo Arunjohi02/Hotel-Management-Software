@@ -11,7 +11,12 @@ public class User
 	private LocalDate craeteAt ;
 	private LocalDate dob ;
 	
-	public User(String name,LocalDate dob,String email, String phone)
+	public User() {}
+
+	public User(String name,
+			LocalDate dob,
+			String email,
+			String phone)
 	{
 		this.name = name ;
 		this.dob = dob ;
@@ -30,6 +35,7 @@ public class User
 	public LocalDate getcreateDate() { return craeteAt ; }
 	
 	public LocalDate getdob() { return dob ; }
+	
 	
 	public void setname(String name) 
 	{ 

@@ -12,4 +12,9 @@ public class UserService
 		}
 		return false;
 	}
+
+	public static String role()
+	{
+		return "Admin";
+	}
 }

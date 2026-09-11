@@ -9,6 +9,8 @@ public class Room
 	private int hotelId ;
 	private int typeId ;
 	
+	public Room() {}
+
 	public Room(int roomNumber,int floorNumber,String status,int hotelId , int typeId )
 	{
 		this.roomNumber = roomNumber ;

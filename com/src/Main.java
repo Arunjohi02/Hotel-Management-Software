@@ -1,9 +1,9 @@
 package com.src ;
 
 import java.util.Scanner ;
+import java.util.InputMismatchException ;
 
 import java.time.LocalDate ;
-
 import java.time.format.*;
 
 import com.src.model.User ;
@@ -11,6 +11,9 @@ import com.src.model.User ;
 import com.src.service.UserService ;
 
 import com.src.exception.InvalidDate ;
+import com.src.exception.InputException ;
+
+import com.src.enums.Role ;
 
 class Main
 {
@@ -20,6 +23,7 @@ class Main
 		byte choice=0;
 		
 		System.out.println(" ================== Hotel Booking & Room Booking ================== ");
+
 		System.out.println("1.Login");
 		System.out.println("2.Register");
 		System.out.println("3.Exit");
@@ -27,7 +31,23 @@ class Main
 		while(true)
 		{
 			System.out.print("Enter your's Choice :");
-			choice = io.nextByte();
+
+			try
+			{
+				choice = io.nextByte();
+			}
+			catch(InputMismatchException e)
+			{
+				try
+				{
+					throw new InputException("\n❌Invalid Input Accepting only Numaric value Max:3");
+				}
+				catch(InputException err)
+				{
+					System.out.println(err.getMessage());
+				}
+			}
+
 			io.nextLine();
 			
 			switch(choice)
@@ -39,10 +59,26 @@ class Main
 					
 					System.out.print("Enter Your's password  :");
 					String password = io.nextLine() ;
-					
+
 					if(UserService.logIn(email,password))
 					{
-						System.out.println("\n✅ LogIn Succesess....\n");
+						if((UserService.role()).equalsIgnoreCase("ADMIN"))
+						{
+							System.out.println("This is Admin");
+						}
+						else if(UserService.role().equalsIgnoreCase("RECEPTIONIST"))
+						{
+							System.out.println("This is RECEPTIONIST");
+						}
+						else if(UserService.role().equalsIgnoreCase("MANAGER"))
+						{
+							System.out.println("This is Manager");
+						}
+						else if(UserService.role().equalsIgnoreCase("CUSTOMER"))
+						{
+							System.out.println("This is CUSTOMER");
+						}
+						
 					}
 					else
 					{
@@ -54,7 +90,7 @@ class Main
 					
 				case 2 :
 				
-					System.out.println("\n============ Register ==========");
+					System.out.println("\n============ Register ============");
 					
 					System.out.print("Enter Your Name :");
 					String Name = io.nextLine();
@@ -105,7 +141,7 @@ class Main
 						System.out.println("\n❌ Faild Register\n");
 					}
 					
-					break;
+					break ;
 				case 3 :
 				
 						System.out.println("☺️ Thank For Your's Attenting");

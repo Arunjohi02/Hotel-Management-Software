@@ -1,12 +1,15 @@
-enum Roll
+package com.src.enums;
+
+public enum Role
 {
 	ADMIN("Admin Only"),
 	CUSTOMER("Customers Only"),
-	RECEPTIONIST("Receptionist Only" );
+	RECEPTIONIST("Receptionist Only" ),
+	MANAGER("Manager only ");
 	
 	private String msg ;
 	
-	Roll(String msg)
+	Role(String msg)
 	{
 		this.msg = msg ;
 	}
