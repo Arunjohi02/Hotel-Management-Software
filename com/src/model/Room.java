@@ -7,17 +7,24 @@ public class Room
 	private int floorNumber ;
 	private String status ;
 	private int hotelId ;
-	private int typeId ;
+	
+	private String title ;
+	private String acType ;
+	private double basePrice ;
+	private int capacity ;
+	private String hotelName ;
 	
 	public Room() {}
 
-	public Room(int roomNumber,int floorNumber,String status,int hotelId , int typeId )
+	public Room(int roomNumber,int floorNumber,String status,String title ,String acType , double basePrice , int capacity)
 	{
 		this.roomNumber = roomNumber ;
 		this.floorNumber = floorNumber ;
 		this.status = status ;
-		this.hotelId = hotelId ;
-		this.typeId = typeId ;
+		this.title = title ;
+		this.acType = acType ;
+		this.basePrice = basePrice ;
+		this.capacity = capacity ;
 	}
 	
 	public int getid() { return id ; }
@@ -29,12 +36,20 @@ public class Room
 	public String getstatus() { return status ; }
 	
 	public int gethotelId() { return hotelId ; }
+
+
+	public String gettitle() { return title ; }
 	
-	public int gettypeId() { return typeId ; }
+	public String getactype() { return acType ; }
+	
+	public double getbasePrice() { return basePrice ; }
+	
+	public int getcapacity() { return capacity ; }
+	
 	
 	public void setid(int id)
 	{ 
-		this.id=id 
+		this.id=id ;
 	}
 	
 	public void setroomNumber(int roomNumber)
@@ -56,10 +71,35 @@ public class Room
 	{ 
 		this.hotelId = hotelId ;
 	}
+
+	public void settitle(String title )
+	{
+		this.title = title ;
+	}
+		   
+	public void setactype(String acType)
+	{
+		this.acType = acType ;
+	}
 	
-	public void settypeId(int typeId)
+	public void setbasePrice(double basePrice)
 	{ 
-		this.typeId = typeId;
+		this.basePrice = basePrice ;
+	}
+	
+	public void setcapacity(int capacity)
+	{ 
+		this.capacity = capacity ;
+	}
+
+	public String gethotelName()
+	{
+		return hotelName;
+	}
+
+	public void sethotelName(String hotelName)
+	{
+		this.hotelName = hotelName;
 	}
 	
 	public String toString()
@@ -69,6 +109,9 @@ public class Room
 		       floorNumber + " " +
 			   status + " " +
 			   hotelId + " " +
-			   typeId ;
+			   title + " " +
+			   acType + " " +
+			   basePrice + " " +
+			   capacity ;
 	}
 }	

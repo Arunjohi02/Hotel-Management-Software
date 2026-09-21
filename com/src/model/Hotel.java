@@ -1,6 +1,9 @@
 package src.model ;
 
-class Hotel
+import java.time.LocalTime ;
+import java.sql.Date;
+
+public class Hotel
 {
 	private int id ;
 	private String name ;
@@ -8,17 +11,19 @@ class Hotel
 	private String phone ;
 	private String email ;
 	private String description ;
-	private String checkInTime ;
-	private String checkoutTime ;
+	private LocalTime checkInTime ;
+	private LocalTime checkoutTime ;
 	private int totalRooms ;
 
+	public Hotel(){}
+	
 	public Hotel(String name ,
 				String location ,
-				String Phone ,
+				String phone ,
 				String email ,
 				String description ,
-				String checkInTime ,
-				String checkoutTime
+				LocalTime checkInTime ,
+				LocalTime checkoutTime,
 				int totalRooms
 			)
 	{
@@ -46,11 +51,11 @@ class Hotel
 	
 	public String getdescription() { return description ; }
 	
-	public String getcheckInTime() { return checkInTime ; }
+	public LocalTime getcheckInTime() { return checkInTime ; }
 	
-	public String getcheckoutTime() { return checkoutTime ; }
+	public LocalTime getcheckoutTime() { return checkoutTime ; }
 	
-	public String gettotalRooms() { return totalRooms ; }
+	public int gettotalRooms() { return totalRooms ; }
 	
 	
 	public void setid(int id)
@@ -83,12 +88,12 @@ class Hotel
 		this.description = description ; 
 	}
 		   
-	public void setcheckInTime(String checkInTime) 
+	public void setcheckInTime(LocalTime checkInTime) 
 	{
 		this.checkInTime = checkInTime ; 
 	}
 		   
-	public void setcheckoutTime(String checkoutTime) 
+	public void setcheckoutTime(LocalTime checkoutTime) 
 	{ 
 		this.checkoutTime = checkoutTime ; 
 	}
@@ -100,13 +105,14 @@ class Hotel
 	
 	public String toString()
 	{
-		return name + " " +
+		return id + " " +
+			   name + " " +
 			   location + " " +
 		       phone + " " +
 			   email + " " +
 			   description + " " +
-			   checkInTime +" " +
-			   checkoutTime +" " +
+			   checkInTime + " " +
+			   checkoutTime + " " +
 			   totalRooms ;
 	}
 }

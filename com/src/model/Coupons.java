@@ -1,5 +1,7 @@
 package src.model ;
 
+import java.time.LocalDate ;
+
 public class Coupons
 {
 	private int id ;
@@ -7,6 +9,20 @@ public class Coupons
 	private int discountPercentage ;
 	private LocalDate validDate ;
 	private int hotelId ;
+	
+	public Coupons() {}
+	
+	public Coupons(String code,
+		int discountPercentage,
+		LocalDate validDate,
+		int hotelId
+	)
+	{
+		this.code = code ;
+		this.discountPercentage = discountPercentage ;
+		this.validDate = validDate ;
+		this.hotelId = hotelId ;
+	}
 	
 	public int getid() { return id ;  }
 	
@@ -17,8 +33,6 @@ public class Coupons
 	public LocalDate getvalidDate() { return validDate ;  }
 	
 	public int gethotelId() { return hotelId ;  }
-	
-	
 	
 	public void setid(int id)
 	{
@@ -45,4 +59,12 @@ public class Coupons
 		this.hotelId = hotelId ;
 	}
 	
+	public String toString()
+	{
+		return id + " " +
+			   code + " " +
+			   discountPercentage + " " +
+		       validDate + " " +
+			   hotelId ;
+	}
 }
